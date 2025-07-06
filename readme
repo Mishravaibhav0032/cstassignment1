@@ -1,0 +1,28 @@
+# Assignment 1 – Securing and Monitoring an Authenticated Flask App
+
+## Overview
+
+This project is part of Assignment 1 for INFO8046. It demonstrates how to build a secure and production-ready Flask application using Auth0 for authentication and Azure for deployment, monitoring, and alerting.
+
+---
+
+## ✅ Features
+
+- Auth0 Single Sign-On (SSO) Integration  
+- Flask app logging user activity (login, protected access, unauthorized attempts)  
+- Azure App Service deployment  
+- Azure Monitor and KQL-based traffic monitoring  
+- Email alerts on suspicious access patterns  
+
+---
+
+## .env File
+'''
+AUTH0_CLIENT_ID=XzrdQy1LBN8UUcINNUWAo7LbwVhFWUND
+AUTH0_CLIENT_SECRET=APFyKSPb0UpNyd8_uckOgvAZocBOYVa7x1lSKg_PTzKCycC9iqvHRedBLWidabXb
+AUTH0_DOMAIN=dev-sqflw86oo7q08ol5.us.auth0.com
+AUTH0_CALLBACK_URL=http://localhost:3000/callback
+APP_SECRET_KEY=45d4a814b625b0bcc4ecb0e509949657cbfe1ddb309a191920e854c189106e73
+FLASK_ENV=development
+'''
+## 
