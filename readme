@@ -25,4 +25,35 @@ AUTH0_CALLBACK_URL=http://localhost:3000/callback
 APP_SECRET_KEY=45d4a814b625b0bcc4ecb0e509949657cbfe1ddb309a191920e854c189106e73
 FLASK_ENV=development
 '''
-## 
+## Install Dependencies
+'''
+pip install -r requirements.txt
+'''
+
+## Run Locally 
+'''
+python server.py
+http://localhost:3000 
+'''
+## Monitoring with KQL
+'''
+AppServiceConsoleLogs
+| where TimeGenerated > ago(15m)
+| where ResultDescription has "/protected"
+| parse ResultDescription with * "user_id=" user_id: string ","
+| summarize AccessCount = count() by user_id, bin(TimeGenerated, 15m)
+| where AccessCount > 10
+| project user_id, TimeGenerated, AccessCount
+'''
+
+## 🗂 Repository Structure
+📦 flask-auth0-app/
+├── server.py
+├── .env.example
+├── requirements.txt
+├── templates/
+│   └── home.html
+├── test-app.http
+└── README.md
+
+## 📺 YouTube Demo
