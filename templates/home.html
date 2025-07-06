@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auth0 Flask App</title>
+</head>
+<body>
+  <h1>Welcome to Auth0 Flask App</h1>
+
+  {% if user %}
+    <p><strong>User Info:</strong></p>
+    <pre>{{ pretty }}</pre>
+    <a href="/logout">Logout</a>
+  {% else %}
+    <a href="/login">Login</a>
+  {% endif %}
+</body>
+</html>
